@@ -5,13 +5,14 @@ namespace OS_Practice1
     {
         private static void PrintOptions()
         {
-            Console.WriteLine("Choose task (1-5) or quit(0): ");
-            Console.WriteLine("1. Drives info");
-            Console.WriteLine("2. Files");
-            Console.WriteLine("3. JSON");
-            Console.WriteLine("4. XML");
-            Console.WriteLine("5. Zip archives");
-            
+            Console.WriteLine("Выберете пункт:");
+            Console.WriteLine("1.Drives info");
+            Console.WriteLine("2.Files");
+            Console.WriteLine("3.JSON");
+            Console.WriteLine("4.XML");
+            Console.WriteLine("5.Zip archives");
+            Console.WriteLine("6.Exit");
+
         }
         static void Main(string[] args)
         {
@@ -41,15 +42,15 @@ namespace OS_Practice1
                     case 3:
                         JSON.Start();
                         break;
-                    case 0:
+                    case 6:
                         Environment.Exit(0);
                         break;
                     default:
-                        Console.WriteLine("Unknown or invalid option");
+                        Console.WriteLine("Неизвестное значение");
                         break;
 
                 }
-                Console.WriteLine("Press any key to continue...");
+                Console.WriteLine("Нажмите любую клавишу для продолжения...");
                 Console.ReadKey();
                 Console.Clear();
             }
