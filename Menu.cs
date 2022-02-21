@@ -6,12 +6,12 @@ namespace OS_Practice1
         private static void PrintOptions()
         {
             Console.WriteLine("Выберете пункт:");
-            Console.WriteLine("1.Drives info");
-            Console.WriteLine("2.Files");
+            Console.WriteLine("1.Информация о дисках");
+            Console.WriteLine("2.Файлы");
             Console.WriteLine("3.JSON");
             Console.WriteLine("4.XML");
-            Console.WriteLine("5.Zip archives");
-            Console.WriteLine("6.Exit");
+            Console.WriteLine("5.ZIP архив");
+            Console.WriteLine("6.Выход");
 
         }
         static void Main(string[] args)
