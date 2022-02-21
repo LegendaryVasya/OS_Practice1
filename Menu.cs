@@ -27,7 +27,7 @@ namespace OS_Practice1
                 }
                 catch (Exception e)
                 {
-                    choice = -1;
+                    choice = 0;
                 }
                 Console.Clear();
 
