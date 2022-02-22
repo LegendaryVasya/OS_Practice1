@@ -17,7 +17,7 @@ namespace OS_Practice1
     {
         public static void Start()
         {
-            string path = @"d:\temp.json";
+            string path = @"D:\urfile.json";
             FileInfo file = new FileInfo(path);
 
             Console.WriteLine("Введите имя:");
@@ -37,9 +37,24 @@ namespace OS_Practice1
                 Console.WriteLine("\nТекст в файле:");
                 Console.WriteLine(sr.ReadToEnd());
             }
+            Console.WriteLine("\nВы хотите удалить файл(1.Да/2.Нет):\n");
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    file.Delete();
+                    Console.WriteLine("Файл удален");
+                    break;
+                case "2":
+                    Console.WriteLine("Файл сохранен");
+                    break;
+                default:
+                    Console.WriteLine("Пожалуйста выберите (1) или (2)");
+                    break;
 
-            file.Delete();
-            Console.WriteLine("Файл удален");
+            }
+            
+            
         }
     }
 }

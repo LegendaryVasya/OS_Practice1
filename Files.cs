@@ -8,7 +8,7 @@ namespace OS_Practice1
         public static void Start()
         {
             //2.Работа с файлами
-            string path = @"D:\MyTest.txt";
+            string path = @"D:\urfile.txt";
             if (!File.Exists(path))
             {
                 Console.WriteLine("Введите строку для заполнения файла:");
@@ -16,7 +16,7 @@ namespace OS_Practice1
                 // Создание файл для записи.
                 using (StreamWriter sw = File.CreateText(path))
                 {
-                    Console.WriteLine("Файл создан.");
+                    Console.WriteLine("Файл создан.\n");
                     sw.WriteLine(user_s);
 
                 }
@@ -34,8 +34,23 @@ namespace OS_Practice1
                 }
 
             }
-            File.Delete(path);
-            Console.WriteLine("Файл удален.");
+            Console.WriteLine("\nВы хотите удалить файл(1.Да/2.Нет):\n");
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    File.Delete(path);
+                    Console.WriteLine("Файл удален");
+                    break;
+                case "2":
+                    Console.WriteLine("Файл сохранен");
+                    break;
+                default:
+                    Console.WriteLine("Пожалуйста выберите (1) или (2)");
+                    break;
+
+            }
+            
         }
     }
 }

@@ -19,30 +19,25 @@ namespace OS_Practice1
             while (true)
             {
                 PrintOptions();
-                int choice;
-                //Проверка ввода(Работа с исключениями)
-                try
-                {
-                   choice = Convert.ToInt32(Console.ReadLine());
-                }
-                catch (Exception e)
-                {
-                    choice = 0;
-                }
+                string choice = Console.ReadLine();
+                
+                
                 Console.Clear();
-
                 switch (choice)
                 {
-                    case 1:
+                    case "1":
                         Drives.Start();
                         break;
-                    case 2:
+                    case "2":
                         Files.Start();
                         break;
-                    case 3:
+                    case "3":
                         JSON.Start();
                         break;
-                    case 6:
+                    case "4":
+                        XML.Start();
+                        break;
+                    case "6":
                         Environment.Exit(0);
                         break;
                     default:
