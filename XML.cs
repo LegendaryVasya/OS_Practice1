@@ -76,21 +76,27 @@ namespace OS_Practice1
             Console.WriteLine("\nРедактированный XML:\n");
             Console.WriteLine(xdoc + "\n");
             Console.WriteLine("\nВы хотите удалить файл(1.Да/2.Нет):\n");
-            string choice = Console.ReadLine();
-            switch (choice)
+            bool final = true;
+            while (final)
             {
-                case "1":
-                    File.Delete(Path);
-                    Console.WriteLine("Файл удален");
-                    break;
-                case "2":
-                    Console.WriteLine("Файл сохранен");
-                    break;
-                default:
-                    Console.WriteLine("Пожалуйста выберите (1) или (2)");
-                    choice = Console.ReadLine();
-                    break;
+                string choice = Console.ReadLine();
+                
+                switch (choice)
+                {
+                    case "1":
+                        File.Delete(Path);
+                        Console.WriteLine("Файл удален");
+                        final = false;
+                        break;
+                    case "2":
+                        Console.WriteLine("Файл сохранен");
+                        final = false;
+                        break;
+                    default:
+                        Console.WriteLine("Пожалуйста выберите (1) или (2)");
+                        break;
 
+                }
             }
             
         }

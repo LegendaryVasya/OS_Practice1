@@ -38,24 +38,27 @@ namespace OS_Practice1
                 Console.WriteLine(sr.ReadToEnd());
             }
             Console.WriteLine("\nВы хотите удалить файл(1.Да/2.Нет):\n");
-            string choice = Console.ReadLine();
-            switch (choice)
+            bool final = true;
+            while (final)
             {
-                case "1":
-                    file.Delete();
-                    Console.WriteLine("Файл удален");
-                    break;
-                case "2":
-                    Console.WriteLine("Файл сохранен");
-                    break;
-                default:
-                    Console.WriteLine("Пожалуйста выберите (1) или (2)");
-                    choice = Console.ReadLine();
-                    break;
+                string choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        file.Delete();
+                        Console.WriteLine("Файл удален");
+                        break;
+                    case "2":
+                        Console.WriteLine("Файл сохранен");
+                        break;
+                    default:
+                        Console.WriteLine("Пожалуйста выберите (1) или (2)");
+                        choice = Console.ReadLine();
+                        break;
+
+                }
 
             }
-            
-            
         }
     }
 }

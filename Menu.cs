@@ -28,6 +28,7 @@ namespace OS_Practice1
                     Console.WriteLine("Введены неправильные данные!");
                     break;
             }
+            Console.ReadLine();
         }
         private static void PrintOptions()
         {
