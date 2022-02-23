@@ -1,8 +1,34 @@
 ﻿using System;
+using System.IO;
 namespace OS_Practice1
 {
     class Menu
     {
+
+        public static void Delete(string file_path,string folder_path, string zipFile, string targetFolder, string targetFolderfile)
+        {
+            Console.WriteLine("Удалить файлы? (yes/no): ");
+            switch (Console.ReadLine())
+            {
+                case "yes":
+                    if ((Directory.Exists(folder_path) && File.Exists(file_path) && Directory.Exists(targetFolder) && File.Exists(zipFile) && File.Exists(targetFolderfile)) == true)
+                    {
+                    File.Delete(file_path);
+                    Directory.Delete(folder_path);
+                    File.Delete(zipFile);
+                    File.Delete(targetFolderfile);
+                    Directory.Delete(targetFolder);
+                        Console.WriteLine("Файлы удалены!");
+                    }
+                    else Console.WriteLine("Ошибка в удалении файлов!\n Проверьте их наличие!");
+                    break;
+                case "no":
+                    break;
+                default:
+                    Console.WriteLine("Введены неправильные данные!");
+                    break;
+            }
+        }
         private static void PrintOptions()
         {
             Console.WriteLine("Выберете пункт:");

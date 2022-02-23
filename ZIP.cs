@@ -5,9 +5,9 @@ using System.IO.Compression;
 
 namespace OS_Practice1
 {
-    internal static class ZIP
+    class ZIP
     {
-        internal static void Start()
+        public static void Start()
         {
 
 
@@ -23,11 +23,11 @@ namespace OS_Practice1
            
             string zipFile = $"{dir}://{folder}.zip"; // сжатый файл
             string targetFolder = $"D://unpack_{folder}/"; // папка, куда распаковывается файл
+            string targetFolderfile = $"D://unpack_{folder}/{file}.txt";
 
 
-            
 
-            Console.WriteLine("\nВы хотите создать или использовать существующую папку с файлом?(1.Да/2.Нет):\n");
+            Console.WriteLine("\nВы хотите создать или использовать существующую папку с файлом?(1.Cоздать/2.Использовать):\n");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -39,12 +39,14 @@ namespace OS_Practice1
                     Console.WriteLine($"Папка {folder_path} архивирована в файл {zipFile}");
                     ZipFile.ExtractToDirectory(zipFile, targetFolder);
                     Console.WriteLine($"Файл {zipFile} распакован в папку {targetFolder}");
+                    Menu.Delete(file_path,folder_path, zipFile, targetFolder, targetFolderfile);
                     break;
                 case "2":
                     ZipFile.CreateFromDirectory(folder_path, zipFile);
                     Console.WriteLine($"Папка {folder_path} архивирована в файл {zipFile}");
                     ZipFile.ExtractToDirectory(zipFile, targetFolder);
                     Console.WriteLine($"Файл {zipFile} распакован в папку {targetFolder}");
+                    Menu.Delete(file_path, folder_path, zipFile, targetFolder, targetFolderfile);
                     break;
                 default:
                     Console.WriteLine("Пожалуйста выберите (1) или (2)");
