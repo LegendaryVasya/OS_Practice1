@@ -44,9 +44,11 @@ namespace OS_Practice1
                     case "1":
                         File.Delete(path);
                         Console.WriteLine("Файл удален");
+                        final = false;
                         break;
                     case "2":
                         Console.WriteLine("Файл сохранен");
+                        final = false;
                         break;
                     default:
                         Console.WriteLine("Пожалуйста выберите (1) или (2)");
