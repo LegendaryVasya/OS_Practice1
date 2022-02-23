@@ -28,39 +28,30 @@ namespace OS_Practice1
             
 
             Console.WriteLine("\nВы хотите создать или использовать существующую папку с файлом?(1.Да/2.Нет):\n");
-            while (true)
+            string choice = Console.ReadLine();
+            switch (choice)
             {
-                string choice = Console.ReadLine();
+                case "1":
+                    var myFold = Directory.CreateDirectory(folder_path);
+                    var myFile = File.Create(file_path);
+                    myFile.Close();
+                    ZipFile.CreateFromDirectory(folder_path, zipFile);
+                    Console.WriteLine($"Папка {folder_path} архивирована в файл {zipFile}");
+                    ZipFile.ExtractToDirectory(zipFile, targetFolder);
+                    Console.WriteLine($"Файл {zipFile} распакован в папку {targetFolder}");
+                    break;
+                case "2":
+                    ZipFile.CreateFromDirectory(folder_path, zipFile);
+                    Console.WriteLine($"Папка {folder_path} архивирована в файл {zipFile}");
+                    ZipFile.ExtractToDirectory(zipFile, targetFolder);
+                    Console.WriteLine($"Файл {zipFile} распакован в папку {targetFolder}");
+                    break;
+                default:
+                    Console.WriteLine("Пожалуйста выберите (1) или (2)");
+                    choice = Console.ReadLine();
+                    break;
 
-                switch (choice)
-                {
-                    case "1":
-                        var myFold = Directory.CreateDirectory(folder_path);
-                        var myFile = File.Create(file_path);
-                        myFile.Close();
-                        ZipFile.CreateFromDirectory(folder_path, zipFile);
-                        Console.WriteLine($"Папка {folder_path} архивирована в файл {zipFile}");
-                        ZipFile.ExtractToDirectory(zipFile, targetFolder);
-                        Console.WriteLine($"Файл {zipFile} распакован в папку {targetFolder}");
-                        break;
-                    case "2":
-                        ZipFile.CreateFromDirectory(folder_path, zipFile);
-                        Console.WriteLine($"Папка {folder_path} архивирована в файл {zipFile}");
-                        ZipFile.ExtractToDirectory(zipFile, targetFolder);
-                        Console.WriteLine($"Файл {zipFile} распакован в папку {targetFolder}");
-                        break;
-                    default:
-                        Console.WriteLine("Пожалуйста выберите (1) или (2)");
-
-                        break;
-
-                }
             }
-
-
-
-           
-            
         }
     }
 }

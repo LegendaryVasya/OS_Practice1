@@ -47,6 +47,7 @@ namespace OS_Practice1
                     break;
                 default:
                     Console.WriteLine("Пожалуйста выберите (1) или (2)");
+                    choice = Console.ReadLine();
                     break;
 
             }
