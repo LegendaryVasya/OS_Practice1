@@ -37,6 +37,9 @@ namespace OS_Practice1
                     case "4":
                         XML.Start();
                         break;
+                    case "5":
+                        ZIP.Start();
+                        break;
                     case "6":
                         Environment.Exit(0);
                         break;
@@ -51,6 +54,5 @@ namespace OS_Practice1
             }
         }
 
-        
     }
 }
